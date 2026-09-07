@@ -74,7 +74,7 @@ const INSTAGRAM_PHOTOS: InstagramPhoto[] = [
 
 export const StayConnectedSection: React.FC = () => {
   return (
-    <section className="w-full bg-white text-black pt-4 pb-12 sm:pt-6 sm:pb-16 md:pt-8 md:pb-20 px-3 sm:px-6 lg:px-12 overflow-hidden">
+    <section className="w-full bg-white text-black pt-1 pb-10 sm:pt-2 sm:pb-14 md:pt-3 md:pb-16 px-3 sm:px-6 lg:px-12 overflow-hidden">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Section Heading & Subtitle */}
         <motion.div
@@ -82,19 +82,19 @@ export const StayConnectedSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-center mb-4 sm:mb-6 max-w-2xl px-2"
+          className="text-center mb-1.5 sm:mb-2 max-w-2xl px-2"
         >
           <h2 className="font-bebas text-[28px] sm:text-[30px] md:text-[32px] font-normal tracking-wide text-black uppercase">
             STAY CONNECTED.
           </h2>
-          <p className="font-dmsans font-normal text-gray-700 text-[16px] leading-relaxed mt-1.5 text-center">
+          <p className="font-dmsans font-normal text-gray-700 text-[16px] leading-relaxed mt-1 text-center">
             Follow Casa Milano on Instagram for the latest events, updates, food, nightlife and
             everything happening at the lounge.
           </p>
         </motion.div>
 
         {/* Responsive Overlapping 3D Fanned Gallery Deck for ALL screen sizes */}
-        <div className="flex items-center justify-center relative w-full h-[170px] min-[400px]:h-[200px] sm:h-[280px] md:h-[350px] lg:h-[400px] my-1 sm:my-3">
+        <div className="flex items-center justify-center relative w-full h-[160px] min-[400px]:h-[190px] sm:h-[260px] md:h-[320px] lg:h-[360px] my-0 sm:my-1">
           <div className="flex items-center justify-center -space-x-5 min-[380px]:-space-x-6 sm:-space-x-9 md:-space-x-12 relative w-full max-w-5xl px-1">
             {INSTAGRAM_PHOTOS.map((photo) => (
               <motion.div

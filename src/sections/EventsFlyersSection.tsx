@@ -39,7 +39,7 @@ export const EventsFlyersSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-white text-black pt-8 pb-16 sm:pt-10 sm:pb-20 md:pt-12 md:pb-24 px-4 sm:px-6 lg:px-12">
+    <section className="w-full bg-white text-black pt-6 pb-6 sm:pt-8 sm:pb-8 md:pt-10 md:pb-10 px-4 sm:px-6 lg:px-12">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Section Heading & Subtitle */}
         <motion.div
@@ -63,7 +63,7 @@ export const EventsFlyersSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 w-full mb-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 w-full mb-5"
         >
           {FLYERS.map((flyer) => (
             <motion.div

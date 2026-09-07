@@ -24,7 +24,7 @@ export const HomeVideoSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-white text-black pt-2 pb-6 sm:pt-4 sm:pb-8 md:pt-6 md:pb-10 px-4 sm:px-6 lg:px-12">
+    <section className="w-full bg-white text-black pt-0 pb-6 sm:pt-1 sm:pb-8 md:pt-2 md:pb-10 px-4 sm:px-6 lg:px-12">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

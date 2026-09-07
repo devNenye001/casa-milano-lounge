@@ -44,18 +44,29 @@ export const MoreToExploreSection: React.FC = () => {
   const checkScroll = () => {
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setCanScrollLeft(scrollLeft > 10);
-      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+      // If content fits without overflow, hide both arrows
+      if (scrollWidth <= clientWidth + 5) {
+        setCanScrollLeft(false);
+        setCanScrollRight(false);
+        return;
+      }
+      setCanScrollLeft(scrollLeft > 15);
+      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 25);
     }
   };
 
   useEffect(() => {
     checkScroll();
+    const t1 = setTimeout(checkScroll, 150);
+    const t2 = setTimeout(checkScroll, 600);
+
     const el = scrollRef.current;
     if (el) {
-      el.addEventListener('scroll', checkScroll);
+      el.addEventListener('scroll', checkScroll, { passive: true });
       window.addEventListener('resize', checkScroll);
       return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
         el.removeEventListener('scroll', checkScroll);
         window.removeEventListener('resize', checkScroll);
       };
@@ -106,8 +117,8 @@ export const MoreToExploreSection: React.FC = () => {
             onClick={() => scrollByAmount('left')}
             className={`absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/95 hover:bg-[#F2A922] text-gray-900 hover:text-white shadow-xl border border-gray-200/80 flex items-center justify-center transition-all duration-300 cursor-pointer ${
               canScrollLeft
-                ? 'opacity-100 scale-100 pointer-events-auto hover:scale-105'
-                : 'opacity-0 scale-75 pointer-events-none'
+                ? 'opacity-100 scale-100 visible pointer-events-auto hover:scale-105'
+                : 'opacity-0 scale-75 invisible pointer-events-none'
             }`}
             aria-label="Scroll left"
             tabIndex={canScrollLeft ? 0 : -1}
@@ -121,8 +132,8 @@ export const MoreToExploreSection: React.FC = () => {
             onClick={() => scrollByAmount('right')}
             className={`absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/95 hover:bg-[#F2A922] text-gray-900 hover:text-white shadow-xl border border-gray-200/80 flex items-center justify-center transition-all duration-300 cursor-pointer ${
               canScrollRight
-                ? 'opacity-100 scale-100 pointer-events-auto hover:scale-105'
-                : 'opacity-0 scale-75 pointer-events-none'
+                ? 'opacity-100 scale-100 visible pointer-events-auto hover:scale-105'
+                : 'opacity-0 scale-75 invisible pointer-events-none'
             }`}
             aria-label="Scroll right"
             tabIndex={canScrollRight ? 0 : -1}
