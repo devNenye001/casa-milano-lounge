@@ -111,7 +111,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ video, variants }) => {
       whileHover={{ y: -5 }}
       transition={{ duration: 0.25 }}
       onClick={handleVideoClick}
-      className="group relative w-full aspect-[9/16] rounded-[22px] overflow-hidden bg-black shadow-none cursor-pointer select-none flex items-center justify-center"
+      className="group relative w-full aspect-[4/5] md:aspect-[9/16] rounded-[22px] overflow-hidden bg-black shadow-none cursor-pointer select-none flex items-center justify-center"
     >
       <video
         ref={videoRef}
