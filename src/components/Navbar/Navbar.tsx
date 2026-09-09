@@ -10,10 +10,10 @@ export interface NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'HOME', href: '/' },
-  { label: 'EVENTS', href: '#events' },
-  { label: 'RESTAURANT', href: '#restaurant' },
-  { label: 'GALLERY', href: '#gallery' },
-  { label: 'CONTACT', href: '#contact' },
+  { label: 'EVENTS', href: '/events' },
+  { label: 'RESTAURANT', href: '/restaurant' },
+  { label: 'GALLERY', href: '/gallery' },
+  { label: 'CONTACT', href: '/contact' },
 ];
 
 export interface NavbarProps {
