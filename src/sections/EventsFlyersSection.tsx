@@ -57,13 +57,13 @@ export const EventsFlyersSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* 3 Event Flyer Cards (flyer 5, 4, 7) */}
+        {/* 3 Event Flyer Cards (Horizontal scroll on mobile, 3-column grid on desktop) */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 w-full mb-5"
+          className="flex md:grid md:grid-cols-3 gap-5 sm:gap-6 w-full mb-5 overflow-x-auto no-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory py-2 px-1"
         >
           {FLYERS.map((flyer) => (
             <motion.div
@@ -71,7 +71,7 @@ export const EventsFlyersSection: React.FC = () => {
               variants={cardVariants}
               whileHover={{ y: -5 }}
               transition={{ duration: 0.25 }}
-              className="group relative w-full h-auto rounded-[22px] overflow-hidden bg-black shadow-none cursor-pointer select-none"
+              className="group relative w-[270px] min-[400px]:w-[300px] md:w-auto h-auto rounded-[22px] overflow-hidden bg-black shadow-none cursor-pointer select-none shrink-0 snap-center md:shrink"
             >
               <img
                 src={flyer.image}

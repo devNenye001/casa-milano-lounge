@@ -75,13 +75,13 @@ export const DestinationsSection: React.FC = () => {
           </h2>
         </motion.div>
 
-        {/* 4 Responsive Destination Cards (Elongated Proportions) */}
+        {/* 4 Destination Cards (Horizontal scroll on mobile, responsive grid on tablet/desktop) */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5"
+          className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 overflow-x-auto no-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory py-2 px-1"
         >
           {DESTINATIONS.map((dest) => (
             <motion.div
@@ -89,7 +89,7 @@ export const DestinationsSection: React.FC = () => {
               variants={cardVariants}
               whileHover={{ y: -5 }}
               transition={{ duration: 0.25 }}
-              className="group relative h-[360px] sm:h-[380px] md:h-[400px] rounded-[22px] overflow-hidden shadow-none cursor-pointer select-none"
+              className="group relative w-[270px] min-[400px]:w-[300px] sm:w-auto h-[360px] sm:h-[380px] md:h-[400px] rounded-[22px] overflow-hidden shadow-none cursor-pointer select-none shrink-0 snap-center sm:shrink"
             >
               {/* Card Background Image with Smooth Hover Zoom */}
               <div
