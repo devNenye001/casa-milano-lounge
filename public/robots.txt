@@ -1,0 +1,7 @@
+# Casa Milano Lounge - robots.txt
+User-agent: *
+Allow: /
+Disallow: /404
+
+# Sitemap location
+Sitemap: https://casa-milano-lounge.vercel.app/sitemap.xml

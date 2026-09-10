@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, type Variants } from 'framer-motion';
+import SEO from '../../components/SEO';
 import Navbar from '../../components/Navbar';
 import Button from '../../components/Button';
 
@@ -43,6 +44,13 @@ export const NotFoundPage: React.FC = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-[#07080a] text-white flex flex-col justify-between overflow-x-hidden selection:bg-[#F2A922] selection:text-black">
+      {/* SEO Metadata */}
+      <SEO
+        title="Page Not Found"
+        description="The page you are looking for could not be found. Return to Casa Milano Lounge homepage."
+        canonicalPath="/404"
+      />
+
       {/* Background Image with Dark Atmospheric Overlay */}
       <div 
         className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"

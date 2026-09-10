@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../../components/SEO';
 import HeroSection from '../../sections/HeroSection';
 import ScrollTextSection from '../../sections/ScrollTextSection';
 import DestinationsSection from '../../sections/DestinationsSection';
@@ -16,6 +17,13 @@ import Footer from '../../components/Footer';
 export const HomePage: React.FC = () => {
   return (
     <div className="relative min-h-screen w-full bg-white text-gray-900 selection:bg-[#F2A922] selection:text-black">
+      {/* SEO Metadata */}
+      <SEO
+        title="Luxury Lounge, Restaurant & Nightclub in Minna"
+        description="Experience luxury dining, signature cocktails, vibrant nightlife, swimming pool parties, and exclusive events at Casa Milano Lounge in Minna, Niger State."
+        canonicalPath="/"
+      />
+
       {/* 1. Hero Section */}
       <HeroSection />
 

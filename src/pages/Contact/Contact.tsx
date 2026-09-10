@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HiHome, HiPhone, HiEnvelope } from 'react-icons/hi2';
+import SEO from '../../components/SEO';
 import Navbar from '../../components/Navbar';
 import FinalCtaSection from '../../sections/FinalCtaSection';
 import Footer from '../../components/Footer';
@@ -8,6 +9,14 @@ import Footer from '../../components/Footer';
 export const ContactPage: React.FC = () => {
   return (
     <div className="relative min-h-screen w-full bg-white text-gray-900 selection:bg-[#F2A922] selection:text-black">
+      {/* SEO Metadata */}
+      <SEO
+        title="Contact Us & Table Reservations"
+        description="Get in touch with Casa Milano Lounge in Minna, Niger State. Find our location on Eastern Bypass, call +234 916 927 8175 or email casamilanolounge@gmail.com for table bookings and event inquiries."
+        canonicalPath="/contact"
+        image="/contact-page-banner.jpg"
+      />
+
       {/* 1. Contact Hero Banner */}
       <section className="relative w-full min-h-[52vh] sm:min-h-[58vh] md:min-h-[62vh] flex flex-col justify-between overflow-hidden bg-[#0a0a0c]">
         {/* Background Image */}

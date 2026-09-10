@@ -5,6 +5,7 @@ import {
   HiChevronLeft,
   HiChevronRight,
 } from 'react-icons/hi2';
+import SEO from '../../components/SEO';
 import Navbar from '../../components/Navbar';
 import FinalCtaSection from '../../sections/FinalCtaSection';
 import Footer from '../../components/Footer';
@@ -327,6 +328,14 @@ export const GalleryPage: React.FC = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-white text-gray-900 selection:bg-[#F2A922] selection:text-black">
+      {/* SEO Metadata */}
+      <SEO
+        title="Photo & Video Gallery"
+        description="Browse high-definition photos and videos of Casa Milano Lounge, VIP Lounge/Club, Swimming Pool, Dining spaces, Game Lounge, and Gym in Minna."
+        canonicalPath="/gallery"
+        image="/gallery-banner.webp"
+      />
+
       {/* 1. Gallery Hero Banner */}
       <section className="relative w-full min-h-[52vh] sm:min-h-[58vh] md:min-h-[62vh] flex flex-col justify-between overflow-hidden bg-[#0a0a0c]">
         {/* Background Image with Dark Overlays */}

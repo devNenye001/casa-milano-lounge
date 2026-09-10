@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2';
+import SEO from '../../components/SEO';
 import Navbar from '../../components/Navbar';
 import Button from '../../components/Button';
 import FinalCtaSection from '../../sections/FinalCtaSection';
@@ -71,6 +72,15 @@ export const RestaurantPage: React.FC = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-white text-gray-900 selection:bg-[#F2A922] selection:text-black">
+      {/* SEO Metadata */}
+      <SEO
+        title="Restaurant & Dining Menu"
+        description="Explore the delicious menu, signature cocktails, savory grills, and luxury dining experience at Casa Milano Lounge restaurant in Minna."
+        canonicalPath="/restaurant"
+        image="/rest-banner.jpg"
+        type="restaurant"
+      />
+
       {/* 1. Restaurant Hero Banner */}
       <section className="relative w-full min-h-[52vh] sm:min-h-[58vh] md:min-h-[62vh] flex flex-col justify-between overflow-hidden bg-[#0a0a0c]">
         {/* Background Image with Dark Overlays */}

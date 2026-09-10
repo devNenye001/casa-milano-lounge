@@ -5,6 +5,7 @@ import {
   HiChevronRight,
   HiXMark,
 } from 'react-icons/hi2';
+import SEO from '../../components/SEO';
 import Navbar from '../../components/Navbar';
 import Button from '../../components/Button';
 import FinalCtaSection from '../../sections/FinalCtaSection';
@@ -127,7 +128,7 @@ export const EventsPage: React.FC = () => {
 
   const handleWeeklyScroll = (direction: 'left' | 'right') => {
     if (weeklyScrollRef.current) {
-      const scrollAmount = direction === 'left' ? -280 : 280;
+      const scrollAmount = direction === 'left' ? -400 : 400;
       weeklyScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
@@ -168,6 +169,14 @@ export const EventsPage: React.FC = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-white text-gray-900 selection:bg-[#F2A922] selection:text-black">
+      {/* SEO Metadata */}
+      <SEO
+        title="Weekly Events, Parties & Private Hosting"
+        description="Discover weekly parties, pool events, celebrity DJ nights, and private event venue bookings at Casa Milano Lounge in Minna."
+        canonicalPath="/events"
+        image="/event-page-banner.jpg"
+      />
+
       {/* 1. Events Hero Banner */}
       <section className="relative w-full min-h-[52vh] sm:min-h-[58vh] md:min-h-[62vh] flex flex-col justify-between overflow-hidden bg-[#0a0a0c]">
         {/* Background Image with Dark Overlays */}
@@ -217,39 +226,39 @@ export const EventsPage: React.FC = () => {
             </h2>
           </motion.div>
 
-          {/* Weekly Event Cards Container with Responsive Navigation Arrows */}
+          {/* Weekly Event Cards Container with Horizontal Scroll & Navigation Arrows */}
           <div className="relative w-full">
-            {/* Left Scroll Arrow (Mobile only) */}
+            {/* Left Scroll Arrow */}
             {canScrollWeeklyLeft && (
               <button
                 type="button"
                 onClick={() => handleWeeklyScroll('left')}
-                className="lg:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/95 backdrop-blur-md border border-gray-200 text-gray-800 flex items-center justify-center transition-all active:scale-95 cursor-pointer -ml-2"
-                aria-label="Scroll left"
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/95 backdrop-blur-md shadow-lg border border-gray-100 text-gray-800 flex items-center justify-center transition-all hover:bg-white hover:scale-105 active:scale-95 cursor-pointer -ml-2 sm:-ml-3"
+                aria-label="Scroll weekly events left"
               >
-                <HiChevronLeft className="w-5 h-5 text-[#F2A922]" />
+                <HiChevronLeft className="w-6 h-6 text-[#F2A922]" />
               </button>
             )}
 
-            {/* Right Scroll Arrow (Mobile only) */}
+            {/* Right Scroll Arrow */}
             {canScrollWeeklyRight && (
               <button
                 type="button"
                 onClick={() => handleWeeklyScroll('right')}
-                className="lg:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/95 backdrop-blur-md border border-gray-200 text-gray-800 flex items-center justify-center transition-all active:scale-95 cursor-pointer -mr-2"
-                aria-label="Scroll right"
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/95 backdrop-blur-md shadow-lg border border-gray-100 text-gray-800 flex items-center justify-center transition-all hover:bg-white hover:scale-105 active:scale-95 cursor-pointer -mr-2 sm:-mr-3"
+                aria-label="Scroll weekly events right"
               >
-                <HiChevronRight className="w-5 h-5 text-[#F2A922]" />
+                <HiChevronRight className="w-6 h-6 text-[#F2A922]" />
               </button>
             )}
 
-            {/* Cards Grid / Scroll Track */}
+            {/* Cards Scroll Track (Horizontal on both Laptop & Mobile) */}
             <div
               ref={weeklyScrollRef}
               onScroll={checkWeeklyScroll}
-              className="w-full overflow-x-auto lg:overflow-visible no-scrollbar py-2"
+              className="w-full overflow-x-auto no-scrollbar py-2"
             >
-              <div className="flex flex-nowrap lg:grid lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 min-w-max lg:min-w-0 px-2 sm:px-0">
+              <div className="flex flex-nowrap gap-4 sm:gap-6 lg:gap-7 px-2 sm:px-4 lg:px-6">
                 {WEEKLY_EVENTS.map((event, index) => (
                   <motion.div
                     key={event.id}
@@ -257,7 +266,7 @@ export const EventsPage: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-30px' }}
                     transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.08 }}
-                    className="relative w-[270px] sm:w-[290px] lg:w-full aspect-[3/4.2] rounded-[24px] sm:rounded-[28px] lg:rounded-[30px] overflow-hidden bg-neutral-900 flex flex-col justify-end p-6 sm:p-7 group shrink-0 shadow-none border border-neutral-800/40"
+                    className="relative w-[300px] min-[400px]:w-[340px] sm:w-[390px] md:w-[430px] lg:w-[460px] aspect-[16/12] rounded-[22px] sm:rounded-[26px] lg:rounded-[28px] overflow-hidden bg-neutral-900 flex flex-col justify-end p-5 sm:p-6 lg:p-7 group shrink-0 shadow-none border-none"
                   >
                     {/* Background Image */}
                     <img
@@ -267,14 +276,14 @@ export const EventsPage: React.FC = () => {
                     />
 
                     {/* Dark Atmospheric Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 transition-colors duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent group-hover:from-black/95 transition-colors duration-300" />
 
                     {/* Content at bottom */}
                     <div className="relative z-10 flex flex-col items-start text-left w-full">
                       <span className="font-bebas text-[20px] sm:text-[22px] lg:text-[24px] tracking-wider text-white uppercase leading-none">
                         {event.day}
                       </span>
-                      <h3 className="font-bebas text-[28px] sm:text-[32px] lg:text-[34px] tracking-wide text-[#F2A922] uppercase leading-none mt-1.5 mb-2">
+                      <h3 className="font-bebas text-[26px] sm:text-[30px] lg:text-[32px] tracking-wide text-[#F2A922] uppercase leading-none mt-1.5 mb-2">
                         {event.title}
                       </h3>
                       <div className="font-dmsans text-[13.5px] sm:text-[14px] text-white/90 leading-snug space-y-1">
@@ -285,8 +294,8 @@ export const EventsPage: React.FC = () => {
 
                       {/* Optional Second Event on Sunday */}
                       {event.secondTitle && (
-                        <div className="mt-3.5 sm:mt-4 w-full">
-                          <h4 className="font-bebas text-[28px] sm:text-[32px] lg:text-[34px] tracking-wide text-[#F2A922] uppercase leading-none mb-1">
+                        <div className="mt-2.5 sm:mt-3 w-full">
+                          <h4 className="font-bebas text-[26px] sm:text-[30px] lg:text-[32px] tracking-wide text-[#F2A922] uppercase leading-none mb-1">
                             {event.secondTitle}
                           </h4>
                           {event.secondDetails?.map((sDetail, sIdx) => (
