@@ -43,7 +43,7 @@ export const FinalCtaSection: React.FC = () => {
             viewport={{ once: true, margin: '-40px' }}
             whileHover={{ scale: 1.04, rotate: -5, zIndex: 30 }}
             transition={{ duration: 0.3 }}
-            className="absolute left-2 min-[400px]:left-6 sm:left-10 top-0 sm:top-2 w-[210px] min-[400px]:w-[250px] sm:w-[310px] md:w-[340px] aspect-[16/11] rounded-[20px] sm:rounded-[26px] overflow-hidden bg-black shadow-xl z-10 cursor-pointer"
+            className="absolute left-2 min-[400px]:left-6 sm:left-10 top-0 sm:top-2 w-[210px] min-[400px]:w-[250px] sm:w-[310px] md:w-[340px] aspect-[16/11] rounded-[20px] sm:rounded-[26px] overflow-hidden bg-black shadow-none z-10 cursor-pointer"
           >
             <img
               src="/nightlife-bg.jpg"
@@ -59,7 +59,7 @@ export const FinalCtaSection: React.FC = () => {
             viewport={{ once: true, margin: '-40px' }}
             whileHover={{ scale: 1.04, rotate: 3, zIndex: 30 }}
             transition={{ duration: 0.3 }}
-            className="absolute right-2 min-[400px]:right-6 sm:right-10 bottom-0 sm:bottom-2 w-[220px] min-[400px]:w-[265px] sm:w-[325px] md:w-[355px] aspect-[16/11] rounded-[20px] sm:rounded-[26px] overflow-hidden bg-black shadow-2xl border-2 border-white z-20 cursor-pointer"
+            className="absolute right-2 min-[400px]:right-6 sm:right-10 bottom-0 sm:bottom-2 w-[220px] min-[400px]:w-[265px] sm:w-[325px] md:w-[355px] aspect-[16/11] rounded-[20px] sm:rounded-[26px] overflow-hidden bg-black shadow-none border-2 border-white z-20 cursor-pointer"
           >
             <img
               src="/social-event.png"

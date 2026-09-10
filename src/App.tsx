@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import HomePage from './pages/Home';
 import ContactPage from './pages/Contact';
+import EventsPage from './pages/Events';
+import GalleryPage from './pages/Gallery';
+import RestaurantPage from './pages/Restaurant';
 import NotFoundPage from './pages/NotFound';
 
 function App() {
@@ -16,6 +19,18 @@ function App() {
 
   if (currentPath === '/contact') {
     return <ContactPage />;
+  }
+
+  if (currentPath === '/events') {
+    return <EventsPage />;
+  }
+
+  if (currentPath === '/gallery') {
+    return <GalleryPage />;
+  }
+
+  if (currentPath === '/restaurant') {
+    return <RestaurantPage />;
   }
 
   if (currentPath === '/404') {

@@ -119,7 +119,7 @@ export const ContactPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="w-full rounded-[22px] sm:rounded-[28px] md:rounded-[32px] overflow-hidden shadow-lg border border-gray-100 bg-neutral-100"
+            className="w-full rounded-[22px] sm:rounded-[28px] md:rounded-[32px] overflow-hidden shadow-none border border-gray-100 bg-neutral-100"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.918424170454!2d6.5756966!3d9.6022927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104c71870307f967%3A0x3b021aa21b73ecb!2sCasa%20Milano%20Lounge!5e0!3m2!1sen!2sng!4v1788957858328!5m2!1sen!2sng"

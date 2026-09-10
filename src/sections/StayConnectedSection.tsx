@@ -114,7 +114,7 @@ export const StayConnectedSection: React.FC = () => {
                 }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 style={{ zIndex: photo.zIndex }}
-                className="relative w-[78px] min-[360px]:w-[86px] min-[400px]:w-[96px] sm:w-[155px] md:w-[200px] lg:w-[230px] aspect-[4/5] rounded-[12px] min-[400px]:rounded-[16px] sm:rounded-[22px] md:rounded-[26px] overflow-hidden bg-black border-[1.5px] sm:border-2 border-white shadow-md sm:shadow-xl cursor-pointer select-none shrink-0"
+                className="relative w-[78px] min-[360px]:w-[86px] min-[400px]:w-[96px] sm:w-[155px] md:w-[200px] lg:w-[230px] aspect-[4/5] rounded-[12px] min-[400px]:rounded-[16px] sm:rounded-[22px] md:rounded-[26px] overflow-hidden bg-black border-[1.5px] sm:border-2 border-white shadow-none cursor-pointer select-none shrink-0"
               >
                 <img
                   src={photo.image}
