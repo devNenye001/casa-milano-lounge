@@ -32,7 +32,7 @@ export const HomeVideoSection: React.FC = () => {
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           onClick={handleVideoClick}
-          className="relative w-full aspect-[16/9] sm:aspect-[16/8.5] md:aspect-[21/10] rounded-[20px] sm:rounded-[28px] overflow-hidden bg-black cursor-pointer shadow-none select-none flex items-center justify-center"
+          className="relative w-full h-[400px] min-[480px]:h-[450px] sm:h-[480px] md:h-[500px] lg:h-[520px] rounded-[20px] sm:rounded-[28px] overflow-hidden bg-black cursor-pointer shadow-none select-none flex items-center justify-center"
         >
           {/* Main Video: Autoplay, Muted, and Native Controls on Tap */}
           <video
