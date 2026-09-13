@@ -112,7 +112,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'video-pool-1',
     type: 'video',
-    src: '/video1.MOV',
+    src: '/video1.mp4',
     title: 'Pool Tour Video',
     category: 'Swimming pool',
   },
@@ -191,14 +191,14 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'video-lounge-2',
     type: 'video',
-    src: '/video2.MOV',
+    src: '/video2.mp4',
     title: 'Lounge Music & Vibes Video',
     category: 'Lounge/Club',
   },
   {
     id: 'video-lounge-5',
     type: 'video',
-    src: '/video5.MOV',
+    src: '/video5.mp4',
     title: 'Club Lounge Showcase Video',
     category: 'Lounge/Club',
   },
@@ -237,14 +237,14 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'video-dining-3',
     type: 'video',
-    src: '/video3.MOV',
+    src: '/video3.mp4',
     title: 'Culinary Flavors Video',
     category: 'Restaurant',
   },
   {
     id: 'video-dining-4',
     type: 'video',
-    src: '/video4.MOV',
+    src: '/video4.mp4',
     title: 'Specialty Food & Drinks Video',
     category: 'Restaurant',
   },

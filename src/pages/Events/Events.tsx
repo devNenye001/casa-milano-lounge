@@ -70,17 +70,17 @@ export const FLYERS = [
 export const EVENT_VIDEOS = [
   {
     id: 'event-video-1',
-    src: '/video1.MOV',
+    src: '/video1.mp4',
     title: 'Pool & Lounge Energy',
   },
   {
     id: 'event-video-2',
-    src: '/video2.MOV',
+    src: '/video2.mp4',
     title: 'Vibrant Club & Nightlife',
   },
   {
     id: 'event-video-3',
-    src: '/video3.MOV',
+    src: '/video3.mp4',
     title: 'Cocktails & Evening Ambiance',
   },
 ];

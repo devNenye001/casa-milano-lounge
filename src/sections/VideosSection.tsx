@@ -9,9 +9,9 @@ export interface VideoItem {
 }
 
 const VIDEOS: VideoItem[] = [
-  { id: '1', src: '/video1.MOV', title: 'Poolside & Lounge' },
-  { id: '2', src: '/video2.MOV', title: 'Nightlife & Drinks' },
-  { id: '3', src: '/video3.MOV', title: 'Cocktails & Dining' },
+  { id: '1', src: '/video1.mp4', title: 'Poolside & Lounge' },
+  { id: '2', src: '/video2.mp4', title: 'Nightlife & Drinks' },
+  { id: '3', src: '/video3.mp4', title: 'Cocktails & Dining' },
 ];
 
 export const VideosSection: React.FC = () => {
@@ -95,6 +95,15 @@ interface VideoCardProps {
 const VideoCard: React.FC<VideoCardProps> = ({ video, variants }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [showControls, setShowControls] = useState(false);
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {
+        // Autoplay handled
+      });
+    }
+  }, []);
 
   const handleVideoClick = () => {
     setShowControls(true);
