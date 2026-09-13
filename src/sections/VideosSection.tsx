@@ -11,7 +11,7 @@ export interface VideoItem {
 const VIDEOS: VideoItem[] = [
   { id: '1', src: '/video1.mp4', title: 'Poolside & Lounge' },
   { id: '2', src: '/video2.mp4', title: 'Nightlife & Drinks' },
-  { id: '3', src: '/video3.mp4', title: 'Cocktails & Dining' },
+  { id: '3', src: '/video.mp4', title: 'Cocktails & Dining' },
 ];
 
 export const VideosSection: React.FC = () => {
@@ -59,13 +59,13 @@ export const VideosSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* 3 Autoplaying Muted Videos (Longer in responsive view, interactive native controls on tap) */}
+        {/* 3 Autoplaying Muted Videos matching Good Nights Look Like This aspect-[3/4] height */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 w-full my-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 w-full my-8"
         >
           {VIDEOS.map((video) => (
             <VideoCard key={video.id} video={video} variants={cardVariants} />
@@ -120,7 +120,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ video, variants }) => {
       whileHover={{ y: -5 }}
       transition={{ duration: 0.25 }}
       onClick={handleVideoClick}
-      className="group relative w-full aspect-[4/3.6] sm:aspect-[4/3.8] md:aspect-[3/3.1] lg:aspect-[3/3.1] max-h-[420px] rounded-[22px] overflow-hidden bg-black shadow-none cursor-pointer select-none flex items-center justify-center"
+      className="group relative w-full aspect-[3/4] rounded-[20px] sm:rounded-[24px] overflow-hidden bg-black border border-gray-100 shadow-none cursor-pointer select-none flex items-center justify-center"
     >
       <video
         ref={videoRef}
@@ -131,7 +131,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ video, variants }) => {
         playsInline
         controls={showControls}
         preload="auto"
-        className="w-full h-full object-cover rounded-[22px]"
+        className="w-full h-full object-cover rounded-[20px] sm:rounded-[24px]"
       />
     </motion.div>
   );
